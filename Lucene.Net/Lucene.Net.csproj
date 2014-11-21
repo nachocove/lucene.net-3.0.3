@@ -1,0 +1,1342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B0CBAEC-6681-423C-B2B1-E3886A5BDF6C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Lucene.Net</RootNamespace>
+    <AssemblyName>Lucene.Net</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\src\core\LZOCompressor.cs">
+      <Link>core\LZOCompressor.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\LucenePackage.cs">
+      <Link>core\LucenePackage.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\ASCIIFoldingFilter.cs">
+      <Link>core\Analysis\ASCIIFoldingFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Analyzer.cs">
+      <Link>core\Analysis\Analyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\BaseCharFilter.cs">
+      <Link>core\Analysis\BaseCharFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\CachingTokenFilter.cs">
+      <Link>core\Analysis\CachingTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\CharArraySet.cs">
+      <Link>core\Analysis\CharArraySet.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\CharFilter.cs">
+      <Link>core\Analysis\CharFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\CharReader.cs">
+      <Link>core\Analysis\CharReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\CharStream.cs">
+      <Link>core\Analysis\CharStream.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\CharTokenizer.cs">
+      <Link>core\Analysis\CharTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\ISOLatin1AccentFilter.cs">
+      <Link>core\Analysis\ISOLatin1AccentFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\KeywordAnalyzer.cs">
+      <Link>core\Analysis\KeywordAnalyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\KeywordTokenizer.cs">
+      <Link>core\Analysis\KeywordTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\LengthFilter.cs">
+      <Link>core\Analysis\LengthFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\LetterTokenizer.cs">
+      <Link>core\Analysis\LetterTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\LowerCaseFilter.cs">
+      <Link>core\Analysis\LowerCaseFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\LowerCaseTokenizer.cs">
+      <Link>core\Analysis\LowerCaseTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\MappingCharFilter.cs">
+      <Link>core\Analysis\MappingCharFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\NormalizeCharMap.cs">
+      <Link>core\Analysis\NormalizeCharMap.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\NumericTokenStream.cs">
+      <Link>core\Analysis\NumericTokenStream.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\PerFieldAnalyzerWrapper.cs">
+      <Link>core\Analysis\PerFieldAnalyzerWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\PorterStemFilter.cs">
+      <Link>core\Analysis\PorterStemFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\PorterStemmer.cs">
+      <Link>core\Analysis\PorterStemmer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\SimpleAnalyzer.cs">
+      <Link>core\Analysis\SimpleAnalyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\StopAnalyzer.cs">
+      <Link>core\Analysis\StopAnalyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\StopFilter.cs">
+      <Link>core\Analysis\StopFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\TeeSinkTokenFilter.cs">
+      <Link>core\Analysis\TeeSinkTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Token.cs">
+      <Link>core\Analysis\Token.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\TokenFilter.cs">
+      <Link>core\Analysis\TokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\TokenStream.cs">
+      <Link>core\Analysis\TokenStream.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Tokenizer.cs">
+      <Link>core\Analysis\Tokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\WhitespaceAnalyzer.cs">
+      <Link>core\Analysis\WhitespaceAnalyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\WhitespaceTokenizer.cs">
+      <Link>core\Analysis\WhitespaceTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\WordlistLoader.cs">
+      <Link>core\Analysis\WordlistLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Standard\StandardAnalyzer.cs">
+      <Link>core\Analysis\Standard\StandardAnalyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Standard\StandardFilter.cs">
+      <Link>core\Analysis\Standard\StandardFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Standard\StandardTokenizer.cs">
+      <Link>core\Analysis\Standard\StandardTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Standard\StandardTokenizerImpl.cs">
+      <Link>core\Analysis\Standard\StandardTokenizerImpl.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Tokenattributes\FlagsAttribute.cs">
+      <Link>core\Analysis\Tokenattributes\FlagsAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Tokenattributes\IFlagsAttribute.cs">
+      <Link>core\Analysis\Tokenattributes\IFlagsAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Tokenattributes\IOffsetAttribute.cs">
+      <Link>core\Analysis\Tokenattributes\IOffsetAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Tokenattributes\IPayloadAttribute.cs">
+      <Link>core\Analysis\Tokenattributes\IPayloadAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Tokenattributes\IPositionIncrementAttribute.cs">
+      <Link>core\Analysis\Tokenattributes\IPositionIncrementAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Tokenattributes\ITermAttribute.cs">
+      <Link>core\Analysis\Tokenattributes\ITermAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Tokenattributes\ITypeAttribute.cs">
+      <Link>core\Analysis\Tokenattributes\ITypeAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Tokenattributes\OffsetAttribute.cs">
+      <Link>core\Analysis\Tokenattributes\OffsetAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Tokenattributes\PayloadAttribute.cs">
+      <Link>core\Analysis\Tokenattributes\PayloadAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Tokenattributes\PositionIncrementAttribute.cs">
+      <Link>core\Analysis\Tokenattributes\PositionIncrementAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Tokenattributes\TermAttribute.cs">
+      <Link>core\Analysis\Tokenattributes\TermAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Analysis\Tokenattributes\TypeAttribute.cs">
+      <Link>core\Analysis\Tokenattributes\TypeAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Document\AbstractField.cs">
+      <Link>core\Document\AbstractField.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Document\CompressionTools.cs">
+      <Link>core\Document\CompressionTools.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Document\DateField.cs">
+      <Link>core\Document\DateField.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Document\DateTools.cs">
+      <Link>core\Document\DateTools.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Document\Document.cs">
+      <Link>core\Document\Document.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Document\Field.cs">
+      <Link>core\Document\Field.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Document\FieldSelector.cs">
+      <Link>core\Document\FieldSelector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Document\FieldSelectorResult.cs">
+      <Link>core\Document\FieldSelectorResult.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Document\Fieldable.cs">
+      <Link>core\Document\Fieldable.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Document\LoadFirstFieldSelector.cs">
+      <Link>core\Document\LoadFirstFieldSelector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Document\MapFieldSelector.cs">
+      <Link>core\Document\MapFieldSelector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Document\NumberTools.cs">
+      <Link>core\Document\NumberTools.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Document\NumericField.cs">
+      <Link>core\Document\NumericField.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Document\SetBasedFieldSelector.cs">
+      <Link>core\Document\SetBasedFieldSelector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\AbstractAllTermDocs.cs">
+      <Link>core\Index\AbstractAllTermDocs.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\AllTermDocs.cs">
+      <Link>core\Index\AllTermDocs.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\BufferedDeletes.cs">
+      <Link>core\Index\BufferedDeletes.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\ByteBlockPool.cs">
+      <Link>core\Index\ByteBlockPool.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\ByteSliceReader.cs">
+      <Link>core\Index\ByteSliceReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\ByteSliceWriter.cs">
+      <Link>core\Index\ByteSliceWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\CharBlockPool.cs">
+      <Link>core\Index\CharBlockPool.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\CheckIndex.cs">
+      <Link>core\Index\CheckIndex.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\CompoundFileReader.cs">
+      <Link>core\Index\CompoundFileReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\CompoundFileWriter.cs">
+      <Link>core\Index\CompoundFileWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\ConcurrentMergeScheduler.cs">
+      <Link>core\Index\ConcurrentMergeScheduler.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\CorruptIndexException.cs">
+      <Link>core\Index\CorruptIndexException.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DefaultSkipListReader.cs">
+      <Link>core\Index\DefaultSkipListReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DefaultSkipListWriter.cs">
+      <Link>core\Index\DefaultSkipListWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DirectoryReader.cs">
+      <Link>core\Index\DirectoryReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocConsumer.cs">
+      <Link>core\Index\DocConsumer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocConsumerPerThread.cs">
+      <Link>core\Index\DocConsumerPerThread.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocFieldConsumer.cs">
+      <Link>core\Index\DocFieldConsumer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocFieldConsumerPerField.cs">
+      <Link>core\Index\DocFieldConsumerPerField.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocFieldConsumerPerThread.cs">
+      <Link>core\Index\DocFieldConsumerPerThread.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocFieldConsumers.cs">
+      <Link>core\Index\DocFieldConsumers.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocFieldConsumersPerField.cs">
+      <Link>core\Index\DocFieldConsumersPerField.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocFieldConsumersPerThread.cs">
+      <Link>core\Index\DocFieldConsumersPerThread.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocFieldProcessor.cs">
+      <Link>core\Index\DocFieldProcessor.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocFieldProcessorPerField.cs">
+      <Link>core\Index\DocFieldProcessorPerField.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocFieldProcessorPerThread.cs">
+      <Link>core\Index\DocFieldProcessorPerThread.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocInverter.cs">
+      <Link>core\Index\DocInverter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocInverterPerField.cs">
+      <Link>core\Index\DocInverterPerField.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocInverterPerThread.cs">
+      <Link>core\Index\DocInverterPerThread.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocumentsWriter.cs">
+      <Link>core\Index\DocumentsWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\DocumentsWriterThreadState.cs">
+      <Link>core\Index\DocumentsWriterThreadState.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FieldInfo.cs">
+      <Link>core\Index\FieldInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FieldInfos.cs">
+      <Link>core\Index\FieldInfos.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FieldInvertState.cs">
+      <Link>core\Index\FieldInvertState.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FieldReaderException.cs">
+      <Link>core\Index\FieldReaderException.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FieldSortedTermVectorMapper.cs">
+      <Link>core\Index\FieldSortedTermVectorMapper.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FieldsReader.cs">
+      <Link>core\Index\FieldsReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FieldsWriter.cs">
+      <Link>core\Index\FieldsWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FilterIndexReader.cs">
+      <Link>core\Index\FilterIndexReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FormatPostingsDocsConsumer.cs">
+      <Link>core\Index\FormatPostingsDocsConsumer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FormatPostingsDocsWriter.cs">
+      <Link>core\Index\FormatPostingsDocsWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FormatPostingsFieldsConsumer.cs">
+      <Link>core\Index\FormatPostingsFieldsConsumer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FormatPostingsFieldsWriter.cs">
+      <Link>core\Index\FormatPostingsFieldsWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FormatPostingsPositionsConsumer.cs">
+      <Link>core\Index\FormatPostingsPositionsConsumer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FormatPostingsPositionsWriter.cs">
+      <Link>core\Index\FormatPostingsPositionsWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FormatPostingsTermsConsumer.cs">
+      <Link>core\Index\FormatPostingsTermsConsumer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FormatPostingsTermsWriter.cs">
+      <Link>core\Index\FormatPostingsTermsWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FreqProxFieldMergeState.cs">
+      <Link>core\Index\FreqProxFieldMergeState.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FreqProxTermsWriter.cs">
+      <Link>core\Index\FreqProxTermsWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FreqProxTermsWriterPerField.cs">
+      <Link>core\Index\FreqProxTermsWriterPerField.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\FreqProxTermsWriterPerThread.cs">
+      <Link>core\Index\FreqProxTermsWriterPerThread.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\IndexCommit.cs">
+      <Link>core\Index\IndexCommit.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\IndexDeletionPolicy.cs">
+      <Link>core\Index\IndexDeletionPolicy.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\IndexFileDeleter.cs">
+      <Link>core\Index\IndexFileDeleter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\IndexFileNameFilter.cs">
+      <Link>core\Index\IndexFileNameFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\IndexFileNames.cs">
+      <Link>core\Index\IndexFileNames.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\IndexReader.cs">
+      <Link>core\Index\IndexReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\IndexWriter.cs">
+      <Link>core\Index\IndexWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\IntBlockPool.cs">
+      <Link>core\Index\IntBlockPool.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\InvertedDocConsumer.cs">
+      <Link>core\Index\InvertedDocConsumer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\InvertedDocConsumerPerField.cs">
+      <Link>core\Index\InvertedDocConsumerPerField.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\InvertedDocConsumerPerThread.cs">
+      <Link>core\Index\InvertedDocConsumerPerThread.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\InvertedDocEndConsumer.cs">
+      <Link>core\Index\InvertedDocEndConsumer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\InvertedDocEndConsumerPerField.cs">
+      <Link>core\Index\InvertedDocEndConsumerPerField.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\InvertedDocEndConsumerPerThread.cs">
+      <Link>core\Index\InvertedDocEndConsumerPerThread.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\KeepOnlyLastCommitDeletionPolicy.cs">
+      <Link>core\Index\KeepOnlyLastCommitDeletionPolicy.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\LogByteSizeMergePolicy.cs">
+      <Link>core\Index\LogByteSizeMergePolicy.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\LogDocMergePolicy.cs">
+      <Link>core\Index\LogDocMergePolicy.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\LogMergePolicy.cs">
+      <Link>core\Index\LogMergePolicy.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\MergeDocIDRemapper.cs">
+      <Link>core\Index\MergeDocIDRemapper.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\MergePolicy.cs">
+      <Link>core\Index\MergePolicy.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\MergeScheduler.cs">
+      <Link>core\Index\MergeScheduler.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\MultiLevelSkipListReader.cs">
+      <Link>core\Index\MultiLevelSkipListReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\MultiLevelSkipListWriter.cs">
+      <Link>core\Index\MultiLevelSkipListWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\MultiReader.cs">
+      <Link>core\Index\MultiReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\MultipleTermPositions.cs">
+      <Link>core\Index\MultipleTermPositions.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\NormsWriter.cs">
+      <Link>core\Index\NormsWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\NormsWriterPerField.cs">
+      <Link>core\Index\NormsWriterPerField.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\NormsWriterPerThread.cs">
+      <Link>core\Index\NormsWriterPerThread.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\ParallelReader.cs">
+      <Link>core\Index\ParallelReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\Payload.cs">
+      <Link>core\Index\Payload.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\PositionBasedTermVectorMapper.cs">
+      <Link>core\Index\PositionBasedTermVectorMapper.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\RawPostingList.cs">
+      <Link>core\Index\RawPostingList.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\ReadOnlyDirectoryReader.cs">
+      <Link>core\Index\ReadOnlyDirectoryReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\ReadOnlySegmentReader.cs">
+      <Link>core\Index\ReadOnlySegmentReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\ReusableStringReader.cs">
+      <Link>core\Index\ReusableStringReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\SegmentInfo.cs">
+      <Link>core\Index\SegmentInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\SegmentInfos.cs">
+      <Link>core\Index\SegmentInfos.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\SegmentMergeInfo.cs">
+      <Link>core\Index\SegmentMergeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\SegmentMergeQueue.cs">
+      <Link>core\Index\SegmentMergeQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\SegmentMerger.cs">
+      <Link>core\Index\SegmentMerger.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\SegmentReader.cs">
+      <Link>core\Index\SegmentReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\SegmentTermDocs.cs">
+      <Link>core\Index\SegmentTermDocs.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\SegmentTermEnum.cs">
+      <Link>core\Index\SegmentTermEnum.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\SegmentTermPositionVector.cs">
+      <Link>core\Index\SegmentTermPositionVector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\SegmentTermPositions.cs">
+      <Link>core\Index\SegmentTermPositions.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\SegmentTermVector.cs">
+      <Link>core\Index\SegmentTermVector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\SegmentWriteState.cs">
+      <Link>core\Index\SegmentWriteState.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\SerialMergeScheduler.cs">
+      <Link>core\Index\SerialMergeScheduler.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\SnapshotDeletionPolicy.cs">
+      <Link>core\Index\SnapshotDeletionPolicy.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\SortedTermVectorMapper.cs">
+      <Link>core\Index\SortedTermVectorMapper.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\StaleReaderException.cs">
+      <Link>core\Index\StaleReaderException.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\StoredFieldsWriter.cs">
+      <Link>core\Index\StoredFieldsWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\StoredFieldsWriterPerThread.cs">
+      <Link>core\Index\StoredFieldsWriterPerThread.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\Term.cs">
+      <Link>core\Index\Term.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermBuffer.cs">
+      <Link>core\Index\TermBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermDocs.cs">
+      <Link>core\Index\TermDocs.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermEnum.cs">
+      <Link>core\Index\TermEnum.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermFreqVector.cs">
+      <Link>core\Index\TermFreqVector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermInfo.cs">
+      <Link>core\Index\TermInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermInfosReader.cs">
+      <Link>core\Index\TermInfosReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermInfosWriter.cs">
+      <Link>core\Index\TermInfosWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermPositionVector.cs">
+      <Link>core\Index\TermPositionVector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermPositions.cs">
+      <Link>core\Index\TermPositions.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermVectorEntry.cs">
+      <Link>core\Index\TermVectorEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermVectorEntryFreqSortedComparator.cs">
+      <Link>core\Index\TermVectorEntryFreqSortedComparator.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermVectorMapper.cs">
+      <Link>core\Index\TermVectorMapper.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermVectorOffsetInfo.cs">
+      <Link>core\Index\TermVectorOffsetInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermVectorsReader.cs">
+      <Link>core\Index\TermVectorsReader.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermVectorsTermsWriter.cs">
+      <Link>core\Index\TermVectorsTermsWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermVectorsTermsWriterPerField.cs">
+      <Link>core\Index\TermVectorsTermsWriterPerField.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermVectorsTermsWriterPerThread.cs">
+      <Link>core\Index\TermVectorsTermsWriterPerThread.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermVectorsWriter.cs">
+      <Link>core\Index\TermVectorsWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermsHash.cs">
+      <Link>core\Index\TermsHash.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermsHashConsumer.cs">
+      <Link>core\Index\TermsHashConsumer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermsHashConsumerPerField.cs">
+      <Link>core\Index\TermsHashConsumerPerField.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermsHashConsumerPerThread.cs">
+      <Link>core\Index\TermsHashConsumerPerThread.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermsHashPerField.cs">
+      <Link>core\Index\TermsHashPerField.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Index\TermsHashPerThread.cs">
+      <Link>core\Index\TermsHashPerThread.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Messages\INLSException.cs">
+      <Link>core\Messages\INLSException.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Messages\Message.cs">
+      <Link>core\Messages\Message.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Messages\MessageImpl.cs">
+      <Link>core\Messages\MessageImpl.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Messages\NLS.cs">
+      <Link>core\Messages\NLS.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\QueryParser\CharStream.cs">
+      <Link>core\QueryParser\CharStream.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\QueryParser\FastCharStream.cs">
+      <Link>core\QueryParser\FastCharStream.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\QueryParser\MultiFieldQueryParser.cs">
+      <Link>core\QueryParser\MultiFieldQueryParser.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\QueryParser\ParseException.cs">
+      <Link>core\QueryParser\ParseException.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\QueryParser\QueryParser.cs">
+      <Link>core\QueryParser\QueryParser.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\QueryParser\QueryParserConstants.cs">
+      <Link>core\QueryParser\QueryParserConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\QueryParser\QueryParserTokenManager.cs">
+      <Link>core\QueryParser\QueryParserTokenManager.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\QueryParser\Token.cs">
+      <Link>core\QueryParser\Token.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\QueryParser\TokenMgrError.cs">
+      <Link>core\QueryParser\TokenMgrError.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\BooleanClause.cs">
+      <Link>core\Search\BooleanClause.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\BooleanQuery.cs">
+      <Link>core\Search\BooleanQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\BooleanScorer.cs">
+      <Link>core\Search\BooleanScorer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\BooleanScorer2.cs">
+      <Link>core\Search\BooleanScorer2.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\CachingSpanFilter.cs">
+      <Link>core\Search\CachingSpanFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\CachingWrapperFilter.cs">
+      <Link>core\Search\CachingWrapperFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Collector.cs">
+      <Link>core\Search\Collector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\ComplexExplanation.cs">
+      <Link>core\Search\ComplexExplanation.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\ConjunctionScorer.cs">
+      <Link>core\Search\ConjunctionScorer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\ConstantScoreQuery.cs">
+      <Link>core\Search\ConstantScoreQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\DefaultSimilarity.cs">
+      <Link>core\Search\DefaultSimilarity.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\DisjunctionMaxQuery.cs">
+      <Link>core\Search\DisjunctionMaxQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\DisjunctionMaxScorer.cs">
+      <Link>core\Search\DisjunctionMaxScorer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\DisjunctionSumScorer.cs">
+      <Link>core\Search\DisjunctionSumScorer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\DocIdSet.cs">
+      <Link>core\Search\DocIdSet.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\DocIdSetIterator.cs">
+      <Link>core\Search\DocIdSetIterator.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\ExactPhraseScorer.cs">
+      <Link>core\Search\ExactPhraseScorer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Explanation.cs">
+      <Link>core\Search\Explanation.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FieldCache.cs">
+      <Link>core\Search\FieldCache.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FieldCacheImpl.cs">
+      <Link>core\Search\FieldCacheImpl.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FieldCacheRangeFilter.cs">
+      <Link>core\Search\FieldCacheRangeFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FieldCacheTermsFilter.cs">
+      <Link>core\Search\FieldCacheTermsFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FieldComparator.cs">
+      <Link>core\Search\FieldComparator.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FieldComparatorSource.cs">
+      <Link>core\Search\FieldComparatorSource.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FieldDoc.cs">
+      <Link>core\Search\FieldDoc.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FieldDocSortedHitQueue.cs">
+      <Link>core\Search\FieldDocSortedHitQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FieldValueHitQueue.cs">
+      <Link>core\Search\FieldValueHitQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Filter.cs">
+      <Link>core\Search\Filter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FilterManager.cs">
+      <Link>core\Search\FilterManager.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FilteredDocIdSet.cs">
+      <Link>core\Search\FilteredDocIdSet.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FilteredDocIdSetIterator.cs">
+      <Link>core\Search\FilteredDocIdSetIterator.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FilteredQuery.cs">
+      <Link>core\Search\FilteredQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FilteredTermEnum.cs">
+      <Link>core\Search\FilteredTermEnum.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FuzzyQuery.cs">
+      <Link>core\Search\FuzzyQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\FuzzyTermEnum.cs">
+      <Link>core\Search\FuzzyTermEnum.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\HitQueue.cs">
+      <Link>core\Search\HitQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\IndexSearcher.cs">
+      <Link>core\Search\IndexSearcher.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\MatchAllDocsQuery.cs">
+      <Link>core\Search\MatchAllDocsQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\MultiPhraseQuery.cs">
+      <Link>core\Search\MultiPhraseQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\MultiSearcher.cs">
+      <Link>core\Search\MultiSearcher.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\MultiTermQuery.cs">
+      <Link>core\Search\MultiTermQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\MultiTermQueryWrapperFilter.cs">
+      <Link>core\Search\MultiTermQueryWrapperFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\NumericRangeFilter.cs">
+      <Link>core\Search\NumericRangeFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\NumericRangeQuery.cs">
+      <Link>core\Search\NumericRangeQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\ParallelMultiSearcher.cs">
+      <Link>core\Search\ParallelMultiSearcher.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\PhrasePositions.cs">
+      <Link>core\Search\PhrasePositions.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\PhraseQuery.cs">
+      <Link>core\Search\PhraseQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\PhraseQueue.cs">
+      <Link>core\Search\PhraseQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\PhraseScorer.cs">
+      <Link>core\Search\PhraseScorer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\PositiveScoresOnlyCollector.cs">
+      <Link>core\Search\PositiveScoresOnlyCollector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\PrefixFilter.cs">
+      <Link>core\Search\PrefixFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\PrefixQuery.cs">
+      <Link>core\Search\PrefixQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\PrefixTermEnum.cs">
+      <Link>core\Search\PrefixTermEnum.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Query.cs">
+      <Link>core\Search\Query.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\QueryTermVector.cs">
+      <Link>core\Search\QueryTermVector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\QueryWrapperFilter.cs">
+      <Link>core\Search\QueryWrapperFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\ReqExclScorer.cs">
+      <Link>core\Search\ReqExclScorer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\ReqOptSumScorer.cs">
+      <Link>core\Search\ReqOptSumScorer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\ScoreCachingWrappingScorer.cs">
+      <Link>core\Search\ScoreCachingWrappingScorer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\ScoreDoc.cs">
+      <Link>core\Search\ScoreDoc.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Scorer.cs">
+      <Link>core\Search\Scorer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Searchable.cs">
+      <Link>core\Search\Searchable.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Searcher.cs">
+      <Link>core\Search\Searcher.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Similarity.cs">
+      <Link>core\Search\Similarity.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\SimilarityDelegator.cs">
+      <Link>core\Search\SimilarityDelegator.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\SingleTermEnum.cs">
+      <Link>core\Search\SingleTermEnum.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\SloppyPhraseScorer.cs">
+      <Link>core\Search\SloppyPhraseScorer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Sort.cs">
+      <Link>core\Search\Sort.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\SortField.cs">
+      <Link>core\Search\SortField.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\SpanFilter.cs">
+      <Link>core\Search\SpanFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\SpanFilterResult.cs">
+      <Link>core\Search\SpanFilterResult.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\SpanQueryFilter.cs">
+      <Link>core\Search\SpanQueryFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\TermQuery.cs">
+      <Link>core\Search\TermQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\TermRangeFilter.cs">
+      <Link>core\Search\TermRangeFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\TermRangeQuery.cs">
+      <Link>core\Search\TermRangeQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\TermRangeTermEnum.cs">
+      <Link>core\Search\TermRangeTermEnum.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\TermScorer.cs">
+      <Link>core\Search\TermScorer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\TimeLimitingCollector.cs">
+      <Link>core\Search\TimeLimitingCollector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\TopDocs.cs">
+      <Link>core\Search\TopDocs.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\TopDocsCollector.cs">
+      <Link>core\Search\TopDocsCollector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\TopFieldCollector.cs">
+      <Link>core\Search\TopFieldCollector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\TopFieldDocs.cs">
+      <Link>core\Search\TopFieldDocs.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\TopScoreDocCollector.cs">
+      <Link>core\Search\TopScoreDocCollector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Weight.cs">
+      <Link>core\Search\Weight.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\WildcardQuery.cs">
+      <Link>core\Search\WildcardQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\WildcardTermEnum.cs">
+      <Link>core\Search\WildcardTermEnum.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Function\ByteFieldSource.cs">
+      <Link>core\Search\Function\ByteFieldSource.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Function\CustomScoreProvider.cs">
+      <Link>core\Search\Function\CustomScoreProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Function\CustomScoreQuery.cs">
+      <Link>core\Search\Function\CustomScoreQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Function\DocValues.cs">
+      <Link>core\Search\Function\DocValues.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Function\FieldCacheSource.cs">
+      <Link>core\Search\Function\FieldCacheSource.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Function\FieldScoreQuery.cs">
+      <Link>core\Search\Function\FieldScoreQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Function\FloatFieldSource.cs">
+      <Link>core\Search\Function\FloatFieldSource.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Function\IntFieldSource.cs">
+      <Link>core\Search\Function\IntFieldSource.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Function\OrdFieldSource.cs">
+      <Link>core\Search\Function\OrdFieldSource.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Function\ReverseOrdFieldSource.cs">
+      <Link>core\Search\Function\ReverseOrdFieldSource.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Function\ShortFieldSource.cs">
+      <Link>core\Search\Function\ShortFieldSource.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Function\ValueSource.cs">
+      <Link>core\Search\Function\ValueSource.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Function\ValueSourceQuery.cs">
+      <Link>core\Search\Function\ValueSourceQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Payloads\AveragePayloadFunction.cs">
+      <Link>core\Search\Payloads\AveragePayloadFunction.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Payloads\MaxPayloadFunction.cs">
+      <Link>core\Search\Payloads\MaxPayloadFunction.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Payloads\MinPayloadFunction.cs">
+      <Link>core\Search\Payloads\MinPayloadFunction.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Payloads\PayloadFunction.cs">
+      <Link>core\Search\Payloads\PayloadFunction.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Payloads\PayloadNearQuery.cs">
+      <Link>core\Search\Payloads\PayloadNearQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Payloads\PayloadSpanUtil.cs">
+      <Link>core\Search\Payloads\PayloadSpanUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Payloads\PayloadTermQuery.cs">
+      <Link>core\Search\Payloads\PayloadTermQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Spans\FieldMaskingSpanQuery.cs">
+      <Link>core\Search\Spans\FieldMaskingSpanQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Spans\NearSpansOrdered.cs">
+      <Link>core\Search\Spans\NearSpansOrdered.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Spans\NearSpansUnordered.cs">
+      <Link>core\Search\Spans\NearSpansUnordered.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Spans\SpanFirstQuery.cs">
+      <Link>core\Search\Spans\SpanFirstQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Spans\SpanNearQuery.cs">
+      <Link>core\Search\Spans\SpanNearQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Spans\SpanNotQuery.cs">
+      <Link>core\Search\Spans\SpanNotQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Spans\SpanOrQuery.cs">
+      <Link>core\Search\Spans\SpanOrQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Spans\SpanQuery.cs">
+      <Link>core\Search\Spans\SpanQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Spans\SpanScorer.cs">
+      <Link>core\Search\Spans\SpanScorer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Spans\SpanTermQuery.cs">
+      <Link>core\Search\Spans\SpanTermQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Spans\SpanWeight.cs">
+      <Link>core\Search\Spans\SpanWeight.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Spans\Spans.cs">
+      <Link>core\Search\Spans\Spans.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Search\Spans\TermSpans.cs">
+      <Link>core\Search\Spans\TermSpans.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\AlreadyClosedException.cs">
+      <Link>core\Store\AlreadyClosedException.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\BufferedIndexInput.cs">
+      <Link>core\Store\BufferedIndexInput.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\BufferedIndexOutput.cs">
+      <Link>core\Store\BufferedIndexOutput.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\CheckSumIndexInput.cs">
+      <Link>core\Store\CheckSumIndexInput.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\CheckSumIndexOutput.cs">
+      <Link>core\Store\CheckSumIndexOutput.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\Directory.cs">
+      <Link>core\Store\Directory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\FSDirectory.cs">
+      <Link>core\Store\FSDirectory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\FSLockFactory.cs">
+      <Link>core\Store\FSLockFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\FileSwitchDirectory.cs">
+      <Link>core\Store\FileSwitchDirectory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\IndexInput.cs">
+      <Link>core\Store\IndexInput.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\IndexOutput.cs">
+      <Link>core\Store\IndexOutput.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\Lock.cs">
+      <Link>core\Store\Lock.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\LockFactory.cs">
+      <Link>core\Store\LockFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\LockObtainFailedException.cs">
+      <Link>core\Store\LockObtainFailedException.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\LockReleaseFailedException.cs">
+      <Link>core\Store\LockReleaseFailedException.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\LockStressTest.cs">
+      <Link>core\Store\LockStressTest.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\LockVerifyServer.cs">
+      <Link>core\Store\LockVerifyServer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\MMapDirectory.cs">
+      <Link>core\Store\MMapDirectory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\NIOFSDirectory.cs">
+      <Link>core\Store\NIOFSDirectory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\NativeFSLockFactory.cs">
+      <Link>core\Store\NativeFSLockFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\NoLockFactory.cs">
+      <Link>core\Store\NoLockFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\NoSuchDirectoryException.cs">
+      <Link>core\Store\NoSuchDirectoryException.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\RAMDirectory.cs">
+      <Link>core\Store\RAMDirectory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\RAMFile.cs">
+      <Link>core\Store\RAMFile.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\RAMInputStream.cs">
+      <Link>core\Store\RAMInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\RAMOutputStream.cs">
+      <Link>core\Store\RAMOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\SimpleFSDirectory.cs">
+      <Link>core\Store\SimpleFSDirectory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\SimpleFSLockFactory.cs">
+      <Link>core\Store\SimpleFSLockFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\SingleInstanceLockFactory.cs">
+      <Link>core\Store\SingleInstanceLockFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Store\VerifyingLockFactory.cs">
+      <Link>core\Store\VerifyingLockFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\AppSettings.cs">
+      <Link>core\Support\AppSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\AttributeImplItem.cs">
+      <Link>core\Support\AttributeImplItem.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\BitSetSupport.cs">
+      <Link>core\Support\BitSetSupport.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\BuildType.cs">
+      <Link>core\Support\BuildType.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\CRC32.cs">
+      <Link>core\Support\CRC32.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\Character.cs">
+      <Link>core\Support\Character.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\CloseableThreadLocalProfiler.cs">
+      <Link>core\Support\CloseableThreadLocalProfiler.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\CollectionsHelper.cs">
+      <Link>core\Support\CollectionsHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\Compare.cs">
+      <Link>core\Support\Compare.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\Cryptography.cs">
+      <Link>core\Support\Cryptography.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\Deflater.cs">
+      <Link>core\Support\Deflater.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\Double.cs">
+      <Link>core\Support\Double.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\EquatableList.cs">
+      <Link>core\Support\EquatableList.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\FileSupport.cs">
+      <Link>core\Support\FileSupport.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\GeneralKeyedCollection.cs">
+      <Link>core\Support\GeneralKeyedCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\HashMap.cs">
+      <Link>core\Support\HashMap.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\IChecksum.cs">
+      <Link>core\Support\IChecksum.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\IThreadRunnable.cs">
+      <Link>core\Support\IThreadRunnable.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\Inflater.cs">
+      <Link>core\Support\Inflater.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\Number.cs">
+      <Link>core\Support\Number.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\OS.cs">
+      <Link>core\Support\OS.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\SharpZipLib.cs">
+      <Link>core\Support\SharpZipLib.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\Single.cs">
+      <Link>core\Support\Single.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\TextSupport.cs">
+      <Link>core\Support\TextSupport.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\ThreadClass.cs">
+      <Link>core\Support\ThreadClass.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\ThreadLock.cs">
+      <Link>core\Support\ThreadLock.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\WeakDictionary.cs">
+      <Link>core\Support\WeakDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\Compatibility\ConcurrentDictionary.cs">
+      <Link>core\Support\Compatibility\ConcurrentDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\Compatibility\Func.cs">
+      <Link>core\Support\Compatibility\Func.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\Compatibility\ISet.cs">
+      <Link>core\Support\Compatibility\ISet.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\Compatibility\SetFactory.cs">
+      <Link>core\Support\Compatibility\SetFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\Compatibility\SortedSet.cs">
+      <Link>core\Support\Compatibility\SortedSet.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\Compatibility\ThreadLocal.cs">
+      <Link>core\Support\Compatibility\ThreadLocal.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Support\Compatibility\WrappedHashSet.cs">
+      <Link>core\Support\Compatibility\WrappedHashSet.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\ArrayUtil.cs">
+      <Link>core\Util\ArrayUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\Attribute.cs">
+      <Link>core\Util\Attribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\AttributeSource.cs">
+      <Link>core\Util\AttributeSource.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\AverageGuessMemoryModel.cs">
+      <Link>core\Util\AverageGuessMemoryModel.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\BitUtil.cs">
+      <Link>core\Util\BitUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\BitVector.cs">
+      <Link>core\Util\BitVector.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\CloseableThreadLocal.cs">
+      <Link>core\Util\CloseableThreadLocal.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\Constants.cs">
+      <Link>core\Util\Constants.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\DocIdBitSet.cs">
+      <Link>core\Util\DocIdBitSet.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\FieldCacheSanityChecker.cs">
+      <Link>core\Util\FieldCacheSanityChecker.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\IAttribute.cs">
+      <Link>core\Util\IAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\IdentityDictionary.cs">
+      <Link>core\Util\IdentityDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\IndexableBinaryStringTools.cs">
+      <Link>core\Util\IndexableBinaryStringTools.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\MapOfSets.cs">
+      <Link>core\Util\MapOfSets.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\MemoryModel.cs">
+      <Link>core\Util\MemoryModel.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\NumericUtils.cs">
+      <Link>core\Util\NumericUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\OpenBitSet.cs">
+      <Link>core\Util\OpenBitSet.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\OpenBitSetDISI.cs">
+      <Link>core\Util\OpenBitSetDISI.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\OpenBitSetIterator.cs">
+      <Link>core\Util\OpenBitSetIterator.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\PriorityQueue.cs">
+      <Link>core\Util\PriorityQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\RamUsageEstimator.cs">
+      <Link>core\Util\RamUsageEstimator.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\ReaderUtil.cs">
+      <Link>core\Util\ReaderUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\ScorerDocQueue.cs">
+      <Link>core\Util\ScorerDocQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\SimpleStringInterner.cs">
+      <Link>core\Util\SimpleStringInterner.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\SmallFloat.cs">
+      <Link>core\Util\SmallFloat.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\SortedVIntList.cs">
+      <Link>core\Util\SortedVIntList.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\SorterTemplate.cs">
+      <Link>core\Util\SorterTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\StringHelper.cs">
+      <Link>core\Util\StringHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\StringInterner.cs">
+      <Link>core\Util\StringInterner.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\ToStringUtils.cs">
+      <Link>core\Util\ToStringUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\UnicodeUtil.cs">
+      <Link>core\Util\UnicodeUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\Version.cs">
+      <Link>core\Util\Version.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\Cache\Cache.cs">
+      <Link>core\Util\Cache\Cache.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\Cache\SimpleLRUCache.cs">
+      <Link>core\Util\Cache\SimpleLRUCache.cs</Link>
+    </Compile>
+    <Compile Include="..\src\core\Util\Cache\SimpleMapCache.cs">
+      <Link>core\Util\Cache\SimpleMapCache.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="core\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\core\Lucene.Net.Search.RemoteSearchable.config">
+      <Link>core\Lucene.Net.Search.RemoteSearchable.config</Link>
+    </None>
+    <None Include="..\src\core\Lucene.Net.Search.TestSort.config">
+      <Link>core\Lucene.Net.Search.TestSort.config</Link>
+    </None>
+    <None Include="..\src\core\Lucene.Net.ndoc">
+      <Link>core\Lucene.Net.ndoc</Link>
+    </None>
+    <None Include="..\src\core\Lucene.Net.snk">
+      <Link>core\Lucene.Net.snk</Link>
+    </None>
+    <None Include="..\src\core\lucene.net.project.nuspec">
+      <Link>core\lucene.net.project.nuspec</Link>
+    </None>
+    <None Include="..\src\core\Analysis\Standard\READ_BEFORE_REGENERATING.txt">
+      <Link>core\Analysis\Standard\READ_BEFORE_REGENERATING.txt</Link>
+    </None>
+    <None Include="..\src\core\Analysis\Standard\StandardTokenizerImpl.jflex">
+      <Link>core\Analysis\Standard\StandardTokenizerImpl.jflex</Link>
+    </None>
+    <None Include="..\src\core\QueryParser\QueryParser.JJ">
+      <Link>core\QueryParser\QueryParser.JJ</Link>
+    </None>
+  </ItemGroup>
+</Project>

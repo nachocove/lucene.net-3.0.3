@@ -6,9 +6,27 @@ using Lucene.Net.Documents;
 using Lucene.Net.Index;
 using Lucene.Net.QueryParsers;
 using Lucene.Net.Search;
+using Lucene.Net.Search.Payloads;
 
 namespace Lucene.Cli
 {
+	public class SearchResults : Dictionary<int, List<ScoreDoc>>
+	{
+		public SearchResults (TopDocs matches)
+		{
+			foreach (var match in matches.ScoreDocs) {
+				List<ScoreDoc> hits;
+				if (TryGetValue (match.Doc, out hits)) {
+					hits.Add (match);
+				} else {
+					hits = new List<ScoreDoc> ();
+					hits.Add (match);
+					Add (match.Doc, hits);
+				}
+			}
+		}
+	}
+
 	public partial class LuceneCli
 	{
 		private IndexWriter _Writer;
@@ -126,22 +144,27 @@ namespace Lucene.Cli
 			using (var fileStream = new FileStream (emailPath, FileMode.Open, FileAccess.Read)) {
 				message = MimeMessage.Load (fileStream);
 			}
+				
+			var doc = new Document ();
+
+			doc.Add (new Field ("message_id", emailPath, Field.Store.YES, Field.Index.NO, Field.TermVector.NO));
+			doc.Add (new Field ("subject", message.Subject, Field.Store.YES, Field.Index.ANALYZED, Field.TermVector.YES));
 
 			// Index the body
 			long bytesIndexed = 0;
-			var doc = new Document ();
 			foreach (var part in message.BodyParts) {
 				var textPart = part as TextPart;
 				if (null == textPart) {
 					continue;
 				}
-				var body = textPart.Text;
+				string body = textPart.Text;
 				Log.Debug ("body = {0}", body);
-				var bodyField = new Field ("body", new StringReader (body));
+				var bodyField =
+					new Field ("body", body, Field.Store.YES,Field.Index.ANALYZED, Field.TermVector.YES);
 				doc.Add (bodyField);
-				Writer.AddDocument (doc);
 				bytesIndexed += body.Length;
 			}
+			Writer.AddDocument (doc);
 			return bytesIndexed;
 		}
 
@@ -153,12 +176,16 @@ namespace Lucene.Cli
 		private void SearchEmails (string search)
 		{
 			var query = new QueryParser (Lucene.Net.Util.Version.LUCENE_30, "body", Analyzer).Parse (search);
-
 			var matches = Searcher.Search (query, 1000);
 			Log.Info ("{0} hits", matches.TotalHits);
 			Log.Info ("{0} max score", matches.MaxScore);
-			foreach (var doc in matches.ScoreDocs) {
-				Log.Info ("{0}", doc.ToString ());
+			// Group them into a list of document
+			var results = new SearchResults (matches);
+			int n = 1;
+			foreach (var matchedDoc in results) {
+				var doc = Searcher.Doc (matchedDoc.Key);
+				Log.Info ("{0} {1}", n, doc.Get ("message_id"));
+				n += 1;
 			}
 		}
 	}

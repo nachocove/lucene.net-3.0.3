@@ -84,6 +84,7 @@ namespace Lucene.Net.Support
                 return (int)settings[key];
             }
 
+			#if DOT_NET
             System.String theValue = ConfigurationManager.AppSettings.Get(key);
             if (theValue == null)
             {
@@ -92,6 +93,9 @@ namespace Lucene.Net.Support
             int retValue = Convert.ToInt32(theValue.Trim());
             settings[key] = retValue;
             return retValue;
+			#else
+			return defValue;
+			#endif
         }
 
         /// <summary>
@@ -107,6 +111,7 @@ namespace Lucene.Net.Support
                 return (long)settings[key];
             }
 
+			#if DOT_NET
             System.String theValue = ConfigurationManager.AppSettings.Get(key);
             if (theValue == null)
             {
@@ -115,6 +120,9 @@ namespace Lucene.Net.Support
             long retValue = Convert.ToInt64(theValue.Trim());
             settings[key] = retValue;
             return retValue;
+			#else
+			return defValue;
+			#endif
         }
 
         /// <summary>
@@ -130,6 +138,7 @@ namespace Lucene.Net.Support
                 return (System.String)settings[key];
             }
 
+			#if DOT_NET
             System.String theValue = ConfigurationManager.AppSettings.Get(key);
             if (theValue == null)
             {
@@ -137,6 +146,9 @@ namespace Lucene.Net.Support
             }
             settings[key] = theValue;
             return theValue;
+			#else
+			return defValue;
+			#endif
         }
 
         public static bool Get(System.String key, bool defValue)
@@ -146,6 +158,7 @@ namespace Lucene.Net.Support
                 return (bool)settings[key];
             }
 
+			#if DOT_NET
             System.String theValue = ConfigurationManager.AppSettings.Get(key);
             if (theValue == null)
             {
@@ -154,6 +167,9 @@ namespace Lucene.Net.Support
             bool retValue = Convert.ToBoolean(theValue.Trim());
             settings[key] = retValue;
             return retValue;
+			#else
+			return defValue;
+			#endif
         }
     }
 }

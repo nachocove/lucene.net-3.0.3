@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8680734F-6C5A-4D16-B6EA-579DC24CF1F9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Lucene.Cli</RootNamespace>
+    <AssemblyName>Lucene.Cli</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Commandlineparameters>-d /Users/henry/WORK/NachoCove/Enron_Corpus/enron_mail_20110402/maildir search "body:Executive"</Commandlineparameters>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Emails.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Lucene.Net\Lucene.Net.csproj">
+      <Project>{5B0CBAEC-6681-423C-B2B1-E3886A5BDF6C}</Project>
+      <Name>Lucene.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MimeKit\MimeKit\MimeKit.Mac.csproj">
+      <Project>{D8F8376B-D81D-4465-8942-CC5242EDB207}</Project>
+      <Name>MimeKit.Mac</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\bc-csharp\crypto\BouncyCastle.csproj">
+      <Project>{4C235092-820C-4DEB-9074-D356FB797D8B}</Project>
+      <Name>BouncyCastle</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

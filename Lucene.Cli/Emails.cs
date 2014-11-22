@@ -43,7 +43,7 @@ namespace Lucene.Cli
 		private IndexReader Reader {
 			get {
 				if (null == _Reader) {
-					_Reader = IndexReader.Open (Index, true);
+					_Reader = IndexReader.Open (Index, false);
 				}
 				return _Reader;
 			}
@@ -147,7 +147,7 @@ namespace Lucene.Cli
 				
 			var doc = new Document ();
 
-			doc.Add (new Field ("message_id", emailPath, Field.Store.YES, Field.Index.NO, Field.TermVector.NO));
+			doc.Add (new Field ("message_id", emailPath, Field.Store.YES, Field.Index.ANALYZED, Field.TermVector.NO));
 			doc.Add (new Field ("subject", message.Subject, Field.Store.YES, Field.Index.ANALYZED, Field.TermVector.YES));
 
 			// Index the body
@@ -171,6 +171,19 @@ namespace Lucene.Cli
 		private void RemoveEmail (string emailPath)
 		{
 			Log.Debug ("Remove {0}", emailPath);
+			var query =
+				new QueryParser (Lucene.Net.Util.Version.LUCENE_30, "message_id", Analyzer).Parse ("message_id:" + emailPath);
+			var matches = Searcher.Search (query, 2);
+			if (1 != matches.TotalHits) {
+				if (1 < matches.TotalHits) {
+					Log.Error ("message_id {0} is not unique {1}", emailPath, matches.TotalHits);
+				} else if (0 == matches.TotalHits) {
+					Log.Error ("message_id {0} not found", emailPath);
+				}
+				return;
+			}
+			Reader.DeleteDocument (matches.ScoreDocs [0].Doc);
+			Reader.Commit ();
 		}
 
 		private void SearchEmails (string search)

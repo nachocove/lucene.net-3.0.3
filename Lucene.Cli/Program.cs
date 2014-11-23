@@ -9,14 +9,9 @@ namespace Lucene.Cli
 {
 	public partial class LuceneCli
 	{
-		private StandardAnalyzer Analyzer;
-		private FSDirectory Index;
+		private static string IndexDirectory = "lucene.index";
 
-		public LuceneCli ()
-		{
-		}
-
-		private void Help (int exitCode = 1)
+		private static void Help (int exitCode = 1)
 		{
 			Console.WriteLine ("USAGE: mono Lucene.Cli.exe [COMMANDS] [PARAMS...]\n");
 			Console.WriteLine ("add [directories/files] - Add emails or directories of emails");
@@ -25,10 +20,8 @@ namespace Lucene.Cli
 			Environment.Exit (exitCode);
 		}
 
-		private void ParserOptions (string[] args)
+		private static void ParserOptions (string[] args)
 		{
-			var indexPath = "lucene.index";
-
 			if (0 == args.Length) {
 				Help (0);
 			}
@@ -48,7 +41,7 @@ namespace Lucene.Cli
 						break;
 					case "-i":
 						index += 1; // consume -i
-						indexPath = args [index];
+						IndexDirectory = args [index];
 						index += 1; // consume index file path
 						break;
 					case "-v":
@@ -60,10 +53,6 @@ namespace Lucene.Cli
 						break;
 					}
 				}
-
-				// Create the index
-				Analyzer = new StandardAnalyzer (Lucene.Net.Util.Version.LUCENE_30);
-				Index = FSDirectory.Open (indexPath);
 
 				// Check the command
 				var command = args [index].ToLower ();
@@ -92,8 +81,7 @@ namespace Lucene.Cli
 
 		public static void Main (string[] args)
 		{
-			var instance = new LuceneCli ();
-			instance.ParserOptions (args);
+			ParserOptions (args);
 		}
 	}
 }

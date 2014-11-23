@@ -17,7 +17,7 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Commandlineparameters>-d /Users/henry/WORK/NachoCove/Enron_Corpus/enron_mail_20110402/maildir search "body:Executive"</Commandlineparameters>
+    <Commandlineparameters>-v -d /Users/henry/WORK/NachoCove/Enron_Corpus/enron_mail_20110402/maildir add lay-k</Commandlineparameters>
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -43,13 +43,17 @@
       <Project>{5B0CBAEC-6681-423C-B2B1-E3886A5BDF6C}</Project>
       <Name>Lucene.Net</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\MimeKit\MimeKit\MimeKit.Mac.csproj">
-      <Project>{D8F8376B-D81D-4465-8942-CC5242EDB207}</Project>
-      <Name>MimeKit.Mac</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\bc-csharp\crypto\BouncyCastle.csproj">
       <Project>{4C235092-820C-4DEB-9074-D356FB797D8B}</Project>
       <Name>BouncyCastle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NachoClientX\IndexLib\IndexLib.csproj">
+      <Project>{E07F9BDA-96D9-4203-AF9D-D7733A65AE83}</Project>
+      <Name>IndexLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MimeKit\MimeKit\MimeKit.csproj">
+      <Project>{D5F54A4F-D84B-430F-9271-F7861E285B3E}</Project>
+      <Name>MimeKit</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

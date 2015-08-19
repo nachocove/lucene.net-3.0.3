@@ -27,7 +27,9 @@ namespace Lucene.Net.QueryParsers
 		{
 			System.IO.StreamWriter temp_writer;
 			temp_writer = new System.IO.StreamWriter(System.Console.OpenStandardOutput(), System.Console.Out.Encoding);
-			temp_writer.AutoFlush = true;
+// Occasional crash here, perhaps if standard open is not yet up.  Not related to early opening.
+// If it's a problem with temp_writer, we ought to get a crash later when debug_stream is used.
+//			temp_writer.AutoFlush = true;
 			debugStream = temp_writer;
 		}
 		
